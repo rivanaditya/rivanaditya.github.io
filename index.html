@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Mochamad Rivan Aditya Wardani</title>
+    <style>
+        /* Gaya CSS (Sama untuk semua halaman agar konsisten) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        :root {
+            --primary-color: #2c3e50; --secondary-color: #3498db; --background-color: #ecf0f1;
+            --surface-color: #ffffff; --text-color: #34495e; --light-text-color: #7f8c8d;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); --border-radius: 8px;
+        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.7; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        header { background: var(--surface-color); padding: 20px 0; border-bottom: 1px solid #bdc3c7; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1em; padding: 10px 15px; border-radius: 6px; transition: background-color 0.3s ease, color 0.3s ease; }
+        nav a:hover, nav a.active { background-color: var(--secondary-color); color: white; }
+        .hero { text-align: center; padding: 60px 20px 40px 20px; }
+        .hero h1 { margin: 0; font-size: 2.8em; color: var(--primary-color); font-weight: 700; }
+        .hero .subtitle { font-size: 1.3em; color: var(--secondary-color); font-weight: 600; margin-top: 5px; }
+        main section { padding: 40px 0; }
+        h2.section-title { text-align: center; font-size: 2.2em; color: var(--primary-color); margin-bottom: 40px; position: relative; }
+        h2.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 10px auto 0; border-radius: 2px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--surface-color); padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
+        .portfolio-card { text-align: center; }
+        .portfolio-card img { width: calc(100% + 50px); height: 200px; object-fit: cover; border-radius: var(--border-radius) var(--border-radius) 0 0; margin: -25px -25px 15px -25px; display: block; }
+        .portfolio-card h4 { font-size: 1.4em; color: var(--primary-color); margin-bottom: 10px; }
+        .portfolio-card .role { font-weight: 600; color: var(--secondary-color); margin-bottom: 20px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .stat { background: var(--background-color); padding: 15px; border-radius: var(--border-radius); }
+        .stat .value { font-size: 1.8em; font-weight: 700; color: var(--primary-color); }
+        .stat .label { font-size: 0.9em; color: var(--light-text-color); }
+        .portfolio-card .description { font-size: 0.95em; text-align: left; }
+        footer { text-align: center; padding: 40px 20px; background: var(--primary-color); color: var(--background-color); margin-top: 40px; }
+    </style>
+</head>
+<body>
 
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html" class="active">Portofolio</a></li>
+                <li><a href="tentang.html">Tentang Saya</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Mochamad Rivan Aditya Wardani</h1>
+            <p class="subtitle">Social Media Specialist & Graphic Designer</p>
+        </div>
+        <div class="container">
+            <section id="portfolio">
+                <h2 class="section-title">Portofolio Proyek</h2>
+                <div class="grid-container">
+                    <div class="card portfolio-card">
+                        <h4>Luminara Media</h4>
+                        <p class="role">Founder & Social Media Strategist</p>
+                        <div class="stats-grid">
+                            <div class="stat"><div class="value">4.4M</div><div class="label">Views (3 Bulan)</div></div>
+                            <div class="stat"><div class="value">2.8M</div><div class="label">Jangkauan Akun</div></div>
+                            <div class="stat"><div class="value">4.8K+</div><div class="label">Followers</div></div>
+                            <div class="stat"><div class="value">300+</div><div class="label">Konten Diproduksi</div></div>
+                        </div>
+                    </div>
+
+                    <div class="card portfolio-card">
+                        <h4>PT. Aditya Mandiri Konstruksi</h4>
+                        <p class="role">Creative & Digital Marketing</p>
+                         <div class="stats-grid">
+                            <div class="stat"><div class="value">24K</div><div class="label">TikTok Views</div></div>
+                            <div class="stat"><div class="value">1.5K+</div><div class="label">Instagram Views</div></div>
+                             <div class="stat"><div class="value">330+</div><div class="label">Followers TikTok</div></div>
+                            <div class="stat"><div class="value">95+</div><div class="label">Total Aset Dibuat</div></div>
+                        </div>
+                    </div>
+
+                    <div class="card portfolio-card">
+                        <h4>Penerbitan Polimedia</h4>
+                        <p class="role">Social Media</p>
+                        <div class="stats-grid">
+                            <div class="stat"><div class="value">117K</div><div class="label">Views (1 Tahun)</div></div>
+                            <div class="stat"><div class="value">54K</div><div class="label">Jangkauan Akun</div></div>
+                            <div class="stat"><div class="value">1.6K+</div><div class="label">Followers</div></div>
+                            <div class="stat"><div class="value">125+</div><div class="label">Konten Diproduksi</div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mochamad Rivan Aditya Wardani.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
