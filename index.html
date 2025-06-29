@@ -25,17 +25,17 @@
         h2.section-title { text-align: center; font-size: 2.2em; color: var(--primary-color); margin-bottom: 40px; position: relative; }
         h2.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 10px auto 0; border-radius: 2px; }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--surface-color); padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card { background: var(--surface-color); padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
+        .card-content { flex-grow: 1; display: flex; flex-direction: column; }
         .portfolio-card { text-align: center; }
-        .portfolio-card img { width: calc(100% + 50px); height: 200px; object-fit: cover; border-radius: var(--border-radius) var(--border-radius) 0 0; margin: -25px -25px 15px -25px; display: block; }
-        .portfolio-card h4 { font-size: 1.4em; color: var(--primary-color); margin-bottom: 10px; }
-        .portfolio-card .role { font-weight: 600; color: var(--secondary-color); margin-bottom: 20px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .portfolio-card h4 { font-size: 1.4em; color: var(--primary-color); margin: 0 0 5px 0; }
+        .portfolio-card .role { font-weight: 600; color: var(--secondary-color); margin-bottom: 20px; display: block; }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: auto; padding-top: 20px; }
         .stat { background: var(--background-color); padding: 15px; border-radius: var(--border-radius); }
         .stat .value { font-size: 1.8em; font-weight: 700; color: var(--primary-color); }
         .stat .label { font-size: 0.9em; color: var(--light-text-color); }
-        .portfolio-card .description { font-size: 0.95em; text-align: left; }
+        .portfolio-card .description { font-size: 0.95em; text-align: left; margin-top: 20px; }
         footer { text-align: center; padding: 40px 20px; background: var(--primary-color); color: var(--background-color); margin-top: 40px; }
     </style>
 </head>
@@ -54,42 +54,66 @@
     <main>
         <div class="hero">
             <h1>Mochamad Rivan Aditya Wardani</h1>
-            <p class="subtitle">Social Media Specialist & Graphic Designer</p>
+            <p class="subtitle">Social Media Strategy & Graphic Design</p>
         </div>
         <div class="container">
             <section id="portfolio">
                 <h2 class="section-title">Portofolio Proyek</h2>
                 <div class="grid-container">
+
                     <div class="card portfolio-card">
-                        <h4>Luminara Media</h4>
-                        <p class="role">Founder & Social Media Strategist</p>
+                        <div class="card-content">
+                            <h4>Luminara Media</h4>
+                            <span class="role">Founder & Social Media Specialist</span>
+                            [cite_start]<p class="description">Mendirikan dan mengelola media digital untuk Gen Z, mencakup pembuatan brief, desain visual, hingga manajemen konten. [cite: 10, 33]</p>
+                        </div>
                         <div class="stats-grid">
-                            <div class="stat"><div class="value">4.4M</div><div class="label">Views (3 Bulan)</div></div>
-                            <div class="stat"><div class="value">2.8M</div><div class="label">Jangkauan Akun</div></div>
-                            <div class="stat"><div class="value">4.8K+</div><div class="label">Followers</div></div>
-                            <div class="stat"><div class="value">300+</div><div class="label">Konten Diproduksi</div></div>
+                            [cite_start]<div class="stat"><div class="value">7 Juta</div><div class="label">Views (2 Bulan) [cite: 14]</div></div>
+                            [cite_start]<div class="stat"><div class="value">6.5K+</div><div class="label">Followers [cite: 13]</div></div>
+                            [cite_start]<div class="stat"><div class="value">200+</div><div class="label">Desain Visual [cite: 12]</div></div>
+                            [cite_start]<div class="stat"><div class="value">100+</div><div class="label">Kolaborasi Musisi [cite: 14]</div></div>
                         </div>
                     </div>
 
                     <div class="card portfolio-card">
-                        <h4>PT. Aditya Mandiri Konstruksi</h4>
-                        <p class="role">Creative & Digital Marketing</p>
-                         <div class="stats-grid">
-                            <div class="stat"><div class="value">24K</div><div class="label">TikTok Views</div></div>
-                            <div class="stat"><div class="value">1.5K+</div><div class="label">Instagram Views</div></div>
-                             <div class="stat"><div class="value">330+</div><div class="label">Followers TikTok</div></div>
-                            <div class="stat"><div class="value">95+</div><div class="label">Total Aset Dibuat</div></div>
+                        <div class="card-content">
+                            <h4>PT. Aditya Mandiri Konstruksi</h4>
+                            [cite_start]<span class="role">Creative & Digital Marketing [cite: 7]</span>
+                            [cite_start]<p class="description">Bertanggung jawab atas produksi konten, desain, dan video untuk kebutuhan media sosial perusahaan konstruksi dan interior. [cite: 7, 22, 25]</p>
+                        </div>
+                        <div class="stats-grid">
+                            [cite_start]<div class="stat"><div class="value">27.5K</div><div class="label">Views (2 Bulan) [cite: 8]</div></div>
+                            [cite_start]<div class="stat"><div class="value">350+</div><div class="label">Followers [cite: 9]</div></div>
+                            [cite_start]<div class="stat"><div class="value">35+</div><div class="label">Materi Konten [cite: 7]</div></div>
+                            <div class="stat"><div class="value">2</div><div class="label">Platform (IG & TikTok)</div></div>
                         </div>
                     </div>
 
                     <div class="card portfolio-card">
-                        <h4>Penerbitan Polimedia</h4>
-                        <p class="role">Social Media</p>
+                        <div class="card-content">
+                            <h4>HIMA Penerbitan & Event</h4>
+                            [cite_start]<span class="role">Ketua HIMA & Kepala Divisi [cite: 18, 30]</span>
+                            [cite_start]<p class="description">Memimpin organisasi, merancang identitas visual kabinet, serta menyusun rencana konten untuk berbagai kegiatan dan event besar. [cite: 18, 30, 40]</p>
+                        </div>
                         <div class="stats-grid">
-                            <div class="stat"><div class="value">117K</div><div class="label">Views (1 Tahun)</div></div>
-                            <div class="stat"><div class="value">54K</div><div class="label">Jangkauan Akun</div></div>
-                            <div class="stat"><div class="value">1.6K+</div><div class="label">Followers</div></div>
-                            <div class="stat"><div class="value">125+</div><div class="label">Konten Diproduksi</div></div>
+                            [cite_start]<div class="stat"><div class="value">10+</div><div class="label">Kolaborasi Penerbit [cite: 18, 20]</div></div>
+                            [cite_start]<div class="stat"><div class="value">6x</div><div class="label">Acara "Pena Tour" [cite: 18]</div></div>
+                            [cite_start]<div class="stat"><div class="value">4x</div><div class="label">Acara "Pena Talk" [cite: 19]</div></div>
+                            [cite_start]<div class="stat"><div class="value">1</div><div class="label">Event "Pena Fair" [cite: 18]</div></div>
+                        </div>
+                    </div>
+
+                    <div class="card portfolio-card">
+                         <div class="card-content">
+                            <h4>Desain Majalah & Layout</h4>
+                            [cite_start]<span class="role">Layouter, Writer & Photographer [cite: 36, 38]</span>
+                            [cite_start]<p class="description">Terlibat dalam proyek pembuatan majalah untuk tugas akademis dan jurnalistik, dengan peran sebagai penulis, fotografer, dan layouter. [cite: 36, 38]</p>
+                        </div>
+                        <div class="stats-grid">
+                            [cite_start]<div class="stat"><div class="value">12</div><div class="label">Layout Isi Buku [cite: 17]</div></div>
+                            [cite_start]<div class="stat"><div class="value">5+</div><div class="label">Merchandise Buku [cite: 15]</div></div>
+                            [cite_start]<div class="stat"><div class="value">2</div><div class="label">Majalah (REKAMAN & The Catholic Cross) [cite: 36, 37]</div></div>
+                            [cite_start]<div class="stat"><div class="value">3</div><div class="label">Peran Berbeda [cite: 36, 38]</div></div>
                         </div>
                     </div>
                 </div>
