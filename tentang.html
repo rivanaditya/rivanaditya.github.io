@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya | M. Rivan A.W.</title>
+    <style>
+        /* Gaya CSS (Sama untuk semua halaman agar konsisten) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        :root {
+            --primary-color: #2c3e50; --secondary-color: #3498db; --background-color: #ecf0f1;
+            --surface-color: #ffffff; --text-color: #34495e; --light-text-color: #7f8c8d;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); --border-radius: 8px;
+        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.7; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        header { background: var(--surface-color); padding: 20px 0; border-bottom: 1px solid #bdc3c7; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1em; padding: 10px 15px; border-radius: 6px; transition: background-color 0.3s ease, color 0.3s ease; }
+        nav a:hover, nav a.active { background-color: var(--secondary-color); color: white; }
+        main section { padding: 40px 0; }
+        h2.section-title { text-align: center; font-size: 2.2em; color: var(--primary-color); margin-bottom: 40px; position: relative; }
+        h2.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 10px auto 0; border-radius: 2px; }
+        #about p { text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--surface-color); padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+        .card h3 { color: var(--secondary-color); margin-top: 0; border-bottom: 2px solid var(--background-color); padding-bottom: 10px; }
+        .card ul { padding-left: 20px; list-style-type: '✓ '; }
+        .card li { margin-bottom: 10px; }
+        .experience-item, .education-item { margin-bottom: 20px; }
+        .experience-item h4, .education-item h4 { margin: 0 0 5px 0; font-weight: 600; color: var(--primary-color); }
+        .experience-item span, .education-item span { display: block; color: var(--light-text-color); font-size: 0.9em; }
+        footer { text-align: center; padding: 40px 20px; background: var(--primary-color); color: var(--background-color); margin-top: 40px; }
+    </style>
+</head>
+<body>
 
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">Portofolio</a></li>
+                <li><a href="tentang.html" class="active">Tentang Saya</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="about">
+                <h2 class="section-title">Tentang Saya</h2>
+                <p>
+                    Saya adalah Fresh Graduate dari Program Studi D3 Komunikasi (IPK 3.51) dengan ketertarikan pada bidang Social Media Specialist dan Graphic Designer. Saya ahli dalam merancang dan melaksanakan strategi media sosial yang mampu meningkatkan engagement, memperkuat branding, dan mendorong pertumbuhan audiens di berbagai platform seperti Instagram, TikTok, dan Youtube.
+                </p>
+            </section>
+
+            <section id="skills-experience">
+                <h2 class="section-title">Keahlian & Pengalaman</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>Pengalaman Profesional</h3>
+                        <div class="experience-item">
+                            <h4>Creative & Digital Marketing</h4>
+                            <span>PT. Aditya Mandiri Konstruksi | Jan 2025 - Sekarang</span>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Founder</h4>
+                            <span>Luminara Media | Jul 2024 - Mar 2025</span>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Social Media</h4>
+                            <span>Penerbitan Polimedia | Jan 2022 - Des 2022</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Keahlian Utama</h3>
+                         <ul>
+                            <li>Social Media Strategy & Management</li>
+                            <li>Content Creation & Content Writing</li>
+                            <li>Graphic Design & Video Editing</li>
+                            <li>Digital Marketing & Data Analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Tools yang Dikuasai</h3>
+                        <ul>
+                            <li><b>Desain:</b> Photoshop, Illustrator, Figma</li>
+                            <li><b>Video:</b> Adobe Premiere, Capcut</li>
+                            <li><b>Analitik:</b> Instagram Insight, TikTok Analytic</li>
+                            <li><b>Produktivitas:</b> Trello, Notion, Google Workspace</li>
+                        </ul>
+                    </div>
+                     <div class="card">
+                        <h3>Pendidikan & Organisasi</h3>
+                        <div class="education-item">
+                            <h4>D3 Komunikasi (IPK 3.51)</h4>
+                            <span>Politeknik Negeri Media Kreatif | 2021 - 2024</span>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Ketua HIMA Penerbitan</h4>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mochamad Rivan Aditya Wardani.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
