@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | M. Rivan A.W.</title>
+    <style>
+        /* Gaya CSS (Sama untuk semua halaman agar konsisten) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        :root {
+            --primary-color: #2c3e50; --secondary-color: #3498db; --background-color: #ecf0f1;
+            --surface-color: #ffffff; --text-color: #34495e; --light-text-color: #7f8c8d;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); --border-radius: 8px;
+        }
+        html, body { height: 100%; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.7; display: flex; flex-direction: column; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        header { background: var(--surface-color); padding: 20px 0; border-bottom: 1px solid #bdc3c7; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1em; padding: 10px 15px; border-radius: 6px; transition: background-color 0.3s ease, color 0.3s ease; }
+        nav a:hover, nav a.active { background-color: var(--secondary-color); color: white; }
+        main { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .contact-card { background: var(--surface-color); padding: 50px; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+        .contact-card h2 { font-size: 2.2em; color: var(--primary-color); margin-top: 0; }
+        .contact-card p { font-size: 1.2em; margin-bottom: 5px; }
+        .contact-card a { color: var(--secondary-color); text-decoration: none; font-weight: 600; }
+        .contact-card a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 40px 20px; background: var(--primary-color); color: var(--background-color); }
+    </style>
+</head>
+<body>
 
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">Portofolio</a></li>
+                <li><a href="tentang.html">Tentang Saya</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="contact-card">
+                <h2>Hubungi Saya</h2>
+                <p>Anda bisa menghubungi saya melalui email atau telepon.</p>
+                <p><a href="mailto:rivanaditya1807@gmail.com">rivanaditya1807@gmail.com</a></p>
+                <p><a href="tel:+6285155060967">+62 851-5506-0967</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mochamad Rivan Aditya Wardani.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
