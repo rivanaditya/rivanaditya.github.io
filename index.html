@@ -4,147 +4,307 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | Mochamad Rivan Aditya Wardani</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Gaya CSS (Sama untuk semua halaman agar konsisten) */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* =================================
+           SETUP DASAR & VARIABEL
+           ================================= */
         :root {
-            --primary-color: #2c3e50; --secondary-color: #3498db; --background-color: #ecf0f1;
-            --surface-color: #ffffff; --text-color: #34495e; --light-text-color: #7f8c8d;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); --border-radius: 8px;
+            --color-yellow: #fde047; /* Warna kuning utama, lebih cerah */
+            --color-dark: #111827;   /* Warna hitam/gelap */
+            --color-light: #f9fafb;  /* Warna putih keabuan */
+            --color-purple: #8b5cf6; /* Warna ungu untuk aksen */
+            --text-dark: #1f2937;
+            --text-light: #f9fafb;
         }
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.7; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        header { background: var(--surface-color); padding: 20px 0; border-bottom: 1px solid #bdc3c7; text-align: center; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
-        nav a { color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1em; padding: 10px 15px; border-radius: 6px; transition: background-color 0.3s ease, color 0.3s ease; }
-        nav a:hover, nav a.active { background-color: var(--secondary-color); color: white; }
-        .hero { text-align: center; padding: 60px 20px 40px 20px; }
-        .hero h1 { margin: 0; font-size: 2.8em; color: var(--primary-color); font-weight: 700; }
-        .hero .subtitle { font-size: 1.3em; color: var(--secondary-color); font-weight: 600; margin-top: 5px; }
-        main section { padding: 40px 0; }
-        h2.section-title { text-align: center; font-size: 2.2em; color: var(--primary-color); margin-bottom: 40px; position: relative; }
-        h2.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 10px auto 0; border-radius: 2px; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card {
-            background: var(--surface-color);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* =================================
+           HEADER & NAVIGASI
+           ================================= */
+        header {
+            background-color: var(--color-dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
             display: flex;
-            flex-direction: column;
-            height: 100%; /* <<< INI PERUBAHANNYA */
-            box-sizing: border-box; /* Mencegah padding merusak kalkulasi tinggi */
+            justify-content: space-between;
+            align-items: center;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
-        a.portfolio-link-card { text-decoration: none; color: inherit; display: block; height: 100%; }
-        .card-content { flex-grow: 1; display: flex; flex-direction: column; }
-        .portfolio-card { text-align: center; }
-        .portfolio-card h4 { font-size: 1.4em; color: var(--primary-color); margin: 0 0 5px 0; }
-        .portfolio-card .role { font-weight: 600; color: var(--secondary-color); margin-bottom: 20px; display: block; }
-        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: auto; padding-top: 20px; }
-        .stat { background: var(--background-color); padding: 15px; border-radius: var(--border-radius); }
-        .stat .value { font-size: 1.8em; font-weight: 700; color: var(--primary-color); }
-        .stat .label { font-size: 0.9em; color: var(--light-text-color); }
-        .portfolio-card .description {
-            font-size: 0.95em;
+
+        .logo {
+            font-family: 'Teko', sans-serif;
+            font-size: 2em;
+            color: var(--color-light);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--color-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--color-yellow);
+        }
+
+        /* =================================
+           HERO SECTION (BAGIAN UTAMA)
+           ================================= */
+        .hero {
+            padding: 100px 0;
             text-align: center;
-            margin-top: 20px;
+            background-color: var(--color-dark);
+            position: relative;
+            overflow: hidden;
         }
-        footer { text-align: center; padding: 40px 20px; background: var(--primary-color); color: var(--background-color); margin-top: 40px; }
+
+        .hero-background-brush {
+            position: absolute;
+            bottom: 0;
+            left: -5%;
+            width: 110%;
+            height: 65%;
+            background-color: var(--color-yellow);
+            transform: skewY(-4deg); /* Efek miring seperti sapuan kuas */
+            transform-origin: bottom left;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 6rem; /* Ukuran font super besar */
+            color: var(--color-dark);
+            line-height: 1;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .hero .subtitle {
+            font-size: 2.5rem;
+            color: var(--color-dark);
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        
+        /* Subtitle kecil di atas judul utama */
+        .hero .pre-title {
+            color: var(--color-light);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+        /* =================================
+           SECTION PORTOFOLIO
+           ================================= */
+        #portfolio {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: left;
+            font-family: 'Teko', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--color-yellow);
+            padding-left: 15px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background: #ffffff;
+            padding: 25px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+        }
+
+        .portfolio-item h4 {
+            font-size: 1.5em;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .portfolio-item .role {
+            font-weight: 600;
+            color: var(--color-purple);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .portfolio-item .description {
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        .btn-learn-more {
+            display: inline-block;
+            background-color: var(--color-yellow);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-learn-more:hover {
+            background-color: #facc15; /* Kuning sedikit lebih gelap */
+        }
+        
+        /* =================================
+           FOOTER
+           ================================= */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--color-dark);
+            color: var(--color-light);
+            margin-top: 60px;
+        }
+
+        /* =================================
+           RESPONSIVE DESIGN
+           ================================= */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            .hero .subtitle {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                display: none; /* Sembunyikan nav di mobile, bisa diganti hamburger menu */
+            }
+        }
+        
+        @media (max-width: 480px) {
+             .hero h1 {
+                font-size: 3rem;
+            }
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
     </style>
 </head>
 <body>
-
     <header>
-        <nav class="container">
-            <ul>
-                <li><a href="index.html" class="active">Portofolio</a></li>
-                <li><a href="tentang.html">Tentang Saya</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
+        <div class="container navbar">
+            <a href="index.html" class="logo">RIVAN.A</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Portofolio</a></li>
+                    <li><a href="tentang.html">Tentang Saya</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <div class="hero">
-            <h1>Mochamad Rivan Aditya Wardani</h1>
-            <p class="subtitle">Social Media Strategy & Graphic Design</p>
-        </div>
-        <div class="container">
-            <section id="portfolio">
+        <section class="hero">
+            <div class="hero-background-brush"></div>
+            <div class="container hero-content">
+                <p class="pre-title">Social Media &amp; Graphic Design</p>
+                <h1>Mochamad Rivan Aditya Wardani</h1>
+                <p class="subtitle">Creative Agency in Strategy</p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
                 <h2 class="section-title">Portofolio Proyek</h2>
-                <div class="grid-container">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <h4>Luminara Media</h4>
+                        <span class="role">Founder & Social Media Specialist</span>
+                        <p class="description">Mendirikan dan mengelola media digital untuk Gen Z, mencakup pembuatan brief, desain visual, hingga manajemen konten.</p>
+                        <a href="luminara.html" class="btn-learn-more">Lihat Detail</a>
+                    </div>
 
-                    <a href="luminara.html" class="portfolio-link-card">
-                        <div class="card portfolio-card">
-                            <div class="card-content">
-                                <h4>Luminara Media</h4>
-                                <span class="role">Founder & Social Media Specialist</span>
-                                <p class="description">Mendirikan dan mengelola media digital untuk Gen Z, mencakup pembuatan brief, desain visual, hingga manajemen konten.</p>
-                            </div>
-                            <div class="stats-grid">
-                                <div class="stat"><div class="value">7 Juta</div><div class="label">Views (2 Bulan)</div></div>
-                                <div class="stat"><div class="value">6.5K+</div><div class="label">Followers</div></div>
-                                <div class="stat"><div class="value">200+</div><div class="label">Desain Visual</div></div>
-                                <div class="stat"><div class="value">100+</div><div class="label">Kolaborasi Musisi</div></div>
-                            </div>
-                        </div>
-                    </a>
+                    <div class="portfolio-item">
+                        <h4>PT. Aditya Mandiri Konstruksi</h4>
+                        <span class="role">Creative & Digital Marketing</span>
+                        <p class="description">Bertanggung jawab atas produksi konten, desain, dan video untuk kebutuhan media sosial perusahaan konstruksi dan interior.</p>
+                        <a href="aditya-mandiri.html" class="btn-learn-more">Lihat Detail</a>
+                    </div>
 
-                    <a href="aditya-mandiri.html" class="portfolio-link-card">
-                        <div class="card portfolio-card">
-                            <div class="card-content">
-                                <h4>PT. Aditya Mandiri Konstruksi</h4>
-                                <span class="role">Creative & Digital Marketing</span>
-                                <p class="description">Bertanggung jawab atas produksi konten, desain, dan video untuk kebutuhan media sosial perusahaan konstruksi dan interior.</p>
-                            </div>
-                            <div class="stats-grid">
-                                <div class="stat"><div class="value">27.5K</div><div class="label">Views (2 Bulan)</div></div>
-                                <div class="stat"><div class="value">350+</div><div class="label">Followers</div></div>
-                                <div class="stat"><div class="value">35+</div><div class="label">Materi Konten</div></div>
-                                <div class="stat"><div class="value">2</div><div class="label">Platform (IG & TikTok)</div></div>
-                            </div>
-                        </div>
-                    </a>
+                    <div class="portfolio-item">
+                        <h4>HIMA Penerbitan & Event</h4>
+                        <span class="role">Ketua HIMA & Kepala Divisi</span>
+                        <p class="description">Memimpin organisasi, merancang identitas visual kabinet, serta menyusun rencana konten untuk berbagai kegiatan dan event besar.</p>
+                        <a href="hima.html" class="btn-learn-more">Lihat Detail</a>
+                    </div>
 
-                    <a href="hima.html" class="portfolio-link-card">
-                        <div class="card portfolio-card">
-                            <div class="card-content">
-                                <h4>HIMA Penerbitan & Event</h4>
-                                <span class="role">Ketua HIMA & Kepala Divisi</span>
-                                <p class="description">Memimpin organisasi, merancang identitas visual kabinet, serta menyusun rencana konten untuk berbagai kegiatan dan event besar.</p>
-                            </div>
-                            <div class="stats-grid">
-                                <div class="stat"><div class="value">10+</div><div class="label">Kolaborasi Penerbit</div></div>
-                                <div class="stat"><div class="value">6x</div><div class="label">Acara "Pena Tour"</div></div>
-                                <div class="stat"><div class="value">4x</div><div class="label">Acara "Pena Talk"</div></div>
-                                <div class="stat"><div class="value">1</div><div class="label">Event "Pena Fair"</div></div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="loveable.html" class="portfolio-link-card">
-                        <div class="card portfolio-card">
-                             <div class="card-content">
-                                <h4>Loveable Group</h4>
-                                <span class="role">Layouter & Desainer Grafis</span>
-                                <p class="description">Merancang merchandise, membuat ilustrasi, serta menyusun layout isi buku untuk meningkatkan efisiensi dan daya tarik visual.</p>
-                            </div>
-                            <div class="stats-grid">
-                                <div class="stat"><div class="value">12</div><div class="label">Layout Isi Buku</div></div>
-                                <div class="stat"><div class="value">5+</div><div class="label">Merchandise Buku</div></div>
-                            </div>
-                        </div>
-                    </a>
+                    <div class="portfolio-item">
+                        <h4>Loveable Group</h4>
+                        <span class="role">Layouter & Desainer Grafis</span>
+                        <p class="description">Merancang merchandise, membuat ilustrasi, serta menyusun layout isi buku untuk meningkatkan efisiensi dan daya tarik visual.</p>
+                        <a href="loveable.html" class="btn-learn-more">Lihat Detail</a>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Mochamad Rivan Aditya Wardani.</p>
+            <p>&copy; 2025 Mochamad Rivan Aditya Wardani. All Rights Reserved.</p>
         </div>
     </footer>
 
