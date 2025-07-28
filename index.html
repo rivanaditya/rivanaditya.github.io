@@ -19,8 +19,14 @@
             --color-border: #e5e7eb;
             --color-text-primary: #111827;
             --color-text-secondary: #6b7280;
+            --color-footer-bg: #0f2c4d; /* Warna biru tua dari contoh */
+            --color-footer-text: #d1d5db; /* Abu-abu terang untuk teks footer */
             --font-body: 'Inter', sans-serif;
-            --font-headline: 'Merriweather', serif; /* Font serif untuk kesan koran/jurnal */
+            --font-headline: 'Merriweather', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -48,7 +54,7 @@
         }
 
         /* =================================
-           HEADER & NAVIGASI
+           HEADER & NAVIGASI (Sama seperti sebelumnya)
            ================================= */
         .main-header {
             border-bottom: 1px solid var(--color-border);
@@ -88,126 +94,160 @@
         }
 
         /* =================================
-           LAYOUT UTAMA (HOMEPAGE GRID)
+           LAYOUT UTAMA (Sama seperti sebelumnya)
            ================================= */
         .homepage-grid {
             padding: 40px 0;
             display: grid;
-            grid-template-columns: 2fr 1fr; /* Kolom kiri lebih besar */
+            grid-template-columns: 2fr 1fr;
             gap: 40px;
         }
-
-        /* Artikel Utama (Kiri) */
         .main-story a, .story-card a {
             text-decoration: none;
             color: inherit;
         }
-
-        .main-story .story-image {
-            margin-bottom: 20px;
-            background-color: #f0f0f0; /* Placeholder color */
+        .main-story .story-image { margin-bottom: 20px; background-color: #f0f0f0; }
+        .story-content h1 { font-family: var(--font-headline); font-size: 2.5rem; line-height: 1.2; margin-bottom: 15px; }
+        .story-content .excerpt { font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.7; }
+        .side-stories { display: flex; flex-direction: column; gap: 30px; }
+        .story-card { display: flex; flex-direction: column; }
+        .story-card .story-image { margin-bottom: 15px; background-color: #f0f0f0; }
+        .story-card .story-content h2 { font-family: var(--font-headline); font-size: 1.4rem; line-height: 1.3; }
+        .category-tags { display: flex; gap: 10px; margin-bottom: 15px; }
+        .tag { display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border-radius: 4px; color: #fff; }
+        .tag-sosmed { background-color: #3b82f6; }
+        .tag-genz { background-color: #8b5cf6; }
+        .tag-branding { background-color: #16a34a; }
+        .tag-event { background-color: #ea580c; }
+        .tag-design { background-color: #db2777; }
+        .story-metadata { margin-top: 15px; font-size: 0.85rem; color: var(--color-text-secondary); font-weight: 600; }
+        
+        /* =================================
+           >>> BAGIAN FOOTER BARU <<<
+           ================================= */
+        .main-footer {
+            background-color: var(--color-footer-bg);
+            color: var(--color-footer-text);
+            padding: 60px 0 0 0;
+            margin-top: 60px;
         }
         
-        .story-content h1 {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+        
+        .footer-logo {
             font-family: var(--font-headline);
             font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 15px;
+            color: #fff;
+            margin-bottom: 20px;
         }
 
-        .story-content .excerpt {
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icons .email { background-color: #8A8A8A; }
+        .social-icons .whatsapp { background-color: #25D366; }
+        .social-icons .instagram { background-color: #E4405F; }
+        .social-icons .tiktok { background-color: #000000; }
+        
+        .footer-col h4 {
             font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            line-height: 1.7;
+            color: #fff;
+            margin-bottom: 20px;
         }
         
-        /* Grid Artikel Samping (Kanan) */
-        .side-stories {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .story-card {
-           display: flex;
-           flex-direction: column;
-        }
-
-        .story-card .story-image {
-            margin-bottom: 15px;
-            background-color: #f0f0f0; /* Placeholder color */
+        .footer-col ul {
+            list-style: none;
         }
         
-        .story-card .story-content h2 {
-            font-family: var(--font-headline);
-            font-size: 1.4rem;
-            line-height: 1.3;
+        .footer-col ul li {
+            margin-bottom: 12px;
         }
-
-        /* Elemen Berita (Kategori, Metadata) */
-        .category-tags {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
+        
+        .footer-col ul a {
+            color: var(--color-footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-
-        .tag {
-            display: inline-block;
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 4px;
+        
+        .footer-col ul a:hover {
             color: #fff;
         }
 
-        .tag-sosmed { background-color: #3b82f6; } /* Biru */
-        .tag-genz { background-color: #8b5cf6; } /* Ungu */
-        .tag-branding { background-color: #16a34a; } /* Hijau */
-        .tag-event { background-color: #ea580c; } /* Oranye */
-        .tag-design { background-color: #db2777; } /* Pink */
-        
-        .story-metadata {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            font-weight: 600;
+        .sub-footer {
+            border-top: 1px solid #374151;
+            padding: 20px 0;
         }
         
-        /* =================================
-           FOOTER
-           ================================= */
-        footer {
+        .sub-footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .sub-footer-content a {
+            color: var(--color-footer-text);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .sub-footer-content a:hover {
+            color: #fff;
+        }
+        
+        .scroll-to-top {
+            display: block;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-text-primary);
+            color: #fff;
+            width: 40px;
+            height: 40px;
             text-align: center;
-            padding: 40px 20px;
-            background: var(--color-surface);
-            border-top: 1px solid var(--color-border);
-            margin-top: 40px;
+            line-height: 40px;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            text-decoration: none;
         }
-        
+
         /* =================================
            RESPONSIVE DESIGN
            ================================= */
         @media (max-width: 992px) {
-            .homepage-grid {
-                grid-template-columns: 1fr; /* Jadi 1 kolom */
-            }
-            .main-story .story-content h1 {
-                font-size: 2rem;
-            }
+            .homepage-grid { grid-template-columns: 1fr; }
+            .main-story .story-content h1 { font-size: 2rem; }
         }
 
         @media (max-width: 768px) {
-            .main-nav {
-                display: none; /* Sembunyikan nav di mobile, bisa diganti hamburger menu */
-            }
+            .main-nav { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
-
     </style>
 </head>
 <body>
-
-    <header class="main-header">
+    <div id="top"></div> <header class="main-header">
         <div class="container navbar">
             <a href="index.html" class="logo">Rivan Aditya Portofolio</a>
             <nav class="main-nav">
@@ -222,7 +262,6 @@
 
     <main>
         <div class="container homepage-grid">
-            
             <article class="main-story">
                 <a href="luminara.html">
                     <div class="story-image">
@@ -241,62 +280,94 @@
             </article>
 
             <aside class="side-stories">
-                
                 <article class="story-card">
                     <a href="aditya-mandiri.html">
                         <div class="story-image">
                            <img src="https://picsum.photos/seed/konstruksi/500/300" alt="Proyek PT. Aditya Mandiri">
                         </div>
                         <div class="story-content">
-                             <div class="category-tags">
-                                <span class="tag tag-branding">Branding</span>
-                            </div>
+                             <div class="category-tags"><span class="tag tag-branding">Branding</span></div>
                             <h2>Membangun Identitas Visual Perusahaan Konstruksi di Era Digital</h2>
                             <p class="story-metadata">28 Juli 2025</p>
                         </div>
                     </a>
                 </article>
-
                 <article class="story-card">
                     <a href="hima.html">
                          <div class="story-image">
                            <img src="https://picsum.photos/seed/hima/500/300" alt="Proyek HIMA">
                         </div>
                         <div class="story-content">
-                             <div class="category-tags">
-                                <span class="tag tag-event">Leadership & Event</span>
-                            </div>
+                             <div class="category-tags"><span class="tag tag-event">Leadership & Event</span></div>
                             <h2>Strategi Visual & Konten di Balik Kesuksesan Event HIMA Penerbitan</h2>
                              <p class="story-metadata">27 Juli 2025</p>
                         </div>
                     </a>
                 </article>
-                
                  <article class="story-card">
                     <a href="loveable.html">
                          <div class="story-image">
                            <img src="https://picsum.photos/seed/loveable/500/300" alt="Proyek Loveable Group">
                         </div>
                         <div class="story-content">
-                             <div class="category-tags">
-                                <span class="tag tag-design">Graphic Design</span>
-                            </div>
+                             <div class="category-tags"><span class="tag tag-design">Graphic Design</span></div>
                             <h2>Efisiensi Desain di Loveable Group: Dari Layout Buku Hingga Merchandise</h2>
                              <p class="story-metadata">26 Juli 2025</p>
                         </div>
                     </a>
                 </article>
-
             </aside>
-
         </div>
     </main>
     
-    <footer>
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 Portofolio oleh Mochamad Rivan Aditya Wardani.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">The Rivan Chronicle</div>
+                    <ul class="social-icons">
+                        <li><a href="mailto:email@example.com" class="email" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:white;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a></li>
+                        <li><a href="#" class="whatsapp" title="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="fill:white;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.508-.182-.008-.381-.008-.579-.008-.198 0-.522.074-.795.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.203 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.078 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </a></li>
+                        <li><a href="#" class="instagram" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:white;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a></li>
+                        <li><a href="#" class="tiktok" title="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="fill:white;"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.86-.95-6.69-2.8-1.95-2-3.02-4.44-3.02-7.03-.01-3.56 1.67-6.93 4.46-9.05 2.85-2.17 6.62-2.58 9.9-1.18.01-.01.01-.01.01-.02z"/></svg>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kategori Proyek</h4>
+                    <ul>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">Branding & Visual</a></li>
+                        <li><a href="#">Leadership & Event</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tentang Kami</h4>
+                    <ul>
+                        <li><a href="tentang.html">Tentang Saya</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="#">Pedoman Media Siber</a></li>
+                        <li><a href="#">Info Iklan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer">
+            <div class="container sub-footer-content">
+                <p>&copy; 2025 Rivan Aditya Portofolio</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
+    
+    <a href="#top" class="scroll-to-top" title="Kembali ke atas">↑</a>
 
 </body>
 </html>
