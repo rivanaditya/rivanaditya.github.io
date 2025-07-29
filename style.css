@@ -2,8 +2,8 @@
    SETUP DASAR & VARIABEL
    ================================= */
 :root {
-    --color-bg: #f4f4f5; /* Warna background sedikit abu-abu */
-    --color-surface: #ffffff; /* Warna dasar kartu */
+    --color-bg: #f4f4f5;
+    --color-surface: #ffffff;
     --color-border: #e5e7eb;
     --color-text-primary: #111827;
     --color-text-secondary: #6b7280;
@@ -109,22 +109,27 @@ img {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Kartu Utama (Kiri) */
+/* Kartu Utama (Kiri) - DIPERBAIKI */
 .main-story .card-content {
     padding: 24px;
 }
 
 .main-story h1 {
     font-family: var(--font-headline);
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 1.3;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .main-story .excerpt {
     font-size: 1rem;
     color: var(--color-text-secondary);
     line-height: 1.6;
+}
+
+.main-story .metadata {
+    margin-top: 16px;
+    font-weight: 600;
 }
 
 /* Kumpulan Kartu (Kanan) */
@@ -141,7 +146,7 @@ img {
 /* Style untuk Kartu dengan Teks di Atas Gambar */
 .text-overlay {
     position: relative;
-    justify-content: flex-end; /* Dorong konten ke bawah */
+    justify-content: flex-end;
     color: #fff;
 }
 
@@ -151,7 +156,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Memastikan gambar mengisi area */
+    object-fit: cover;
     z-index: 1;
 }
 
@@ -182,9 +187,9 @@ img {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    border-radius: 99px; /* Bikin jadi pil */
+    border-radius: 99px;
     color: #fff;
-    background-color: #3b82f6; /* Default color */
+    background-color: #3b82f6;
 }
 
 .tag-sosmed { background-color: #3b82f6; }
@@ -206,7 +211,7 @@ img {
 
 
 /* =================================
-   FOOTER (Sama seperti sebelumnya)
+   FOOTER
    ================================= */
 .main-footer {
     background-color: var(--color-footer-bg);
