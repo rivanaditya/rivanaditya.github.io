@@ -48,39 +48,57 @@ img {
 }
 
 /* =================================
-   HEADER & NAVIGASI
+   HEADER & NAVIGASI (DIPERBAIKI)
    ================================= */
 .main-header {
     background-color: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
-    padding: 15px 0;
+    padding: 20px 0; /* Padding ditambah biar lebih lega */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 .logo {
     font-family: var(--font-headline);
     font-size: 1.8em;
     font-weight: 700;
+    flex-shrink: 0; /* Mencegah logo jadi kecil */
+}
+
+.main-nav {
+    flex-grow: 1; /* Biar nav mengisi ruang kosong */
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    justify-content: center; /* Posisikan menu di tengah */
+    gap: 32px;
 }
 
 .main-nav a {
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     font-weight: 600;
     font-size: 0.95em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
-.main-nav a:hover, .main-nav a.active {
+.main-nav a:hover {
+    color: var(--color-text-secondary);
+}
+
+.chevron-down {
+    stroke: var(--color-text-secondary);
+}
+
+.header-search a {
     color: var(--color-text-primary);
 }
 
@@ -109,7 +127,6 @@ img {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Kartu Utama (Kiri) - DIPERBAIKI */
 .main-story .card-content {
     padding: 24px;
 }
@@ -132,7 +149,6 @@ img {
     font-weight: 600;
 }
 
-/* Kumpulan Kartu (Kanan) */
 .side-stories-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -143,7 +159,6 @@ img {
     grid-column: span 2;
 }
 
-/* Style untuk Kartu dengan Teks di Atas Gambar */
 .text-overlay {
     position: relative;
     justify-content: flex-end;
@@ -173,7 +188,6 @@ img {
     line-height: 1.4;
 }
 
-/* Elemen Umum di dalam Kartu */
 .category-tags {
     display: flex;
     flex-wrap: wrap;
@@ -259,8 +273,8 @@ img {
 
 .sub-footer { border-top: 1px solid #374151; padding: 20px 0; }
 .sub-footer-content { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
-.sub-footer-content a { color: var(--color-footer-text); margin-left: 20px; }
-.sub-footer-content a:hover { color: #fff; }
+.sub-footer-content a { color: var(--color-text-secondary); margin-left: 20px; }
+.sub-footer-content a:hover { color: var(--color-footer-text); }
 
 .scroll-to-top {
     display: block; position: fixed; bottom: 20px; right: 20px;
@@ -272,6 +286,12 @@ img {
 /* =================================
    RESPONSIVE DESIGN
    ================================= */
+@media (max-width: 1024px) {
+    .main-nav { display: none; } /* Sembunyikan nav di tablet */
+    .navbar { justify-content: space-between; }
+    .header-search { display: block; } /* Pastikan search tetap ada */
+}
+
 @media (max-width: 992px) {
     .homepage-grid {
         grid-template-columns: 1fr;
@@ -279,7 +299,6 @@ img {
 }
 
 @media (max-width: 768px) {
-    .main-nav { display: none; }
     .footer-grid { grid-template-columns: 1fr; }
     .side-stories-grid { grid-template-columns: 1fr; }
     .story-card.full-width { grid-column: auto; }
